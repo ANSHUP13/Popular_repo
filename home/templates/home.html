@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Home</title>
+</head>
+
+<body>
+
+
+    <!-- As a heading -->
+    <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1">Find the n most popular repositories of a given organization on Github</span>
+    </nav>
+
+    <div class="container">
+        <h1></h1>
+        <form action="/result" method="post"> {% csrf_token %}
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Enter the name of organisation</label>
+                <textarea class="form-control" name="web" id="exampleFormControlTextarea1" placeholder="Example: google"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Enter the no. of most popular repositories you want (n).</label>
+                <textarea class="form-control" name="N" id="exampleFormControlTextarea1" placeholder="Example: 5"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Enter the no. of most popular commits of these repositories you want to see (m).</label>
+                <textarea class="form-control" name="M" id="exampleFormControlTextarea1" placeholder="Example: 3"></textarea>
+            </div>
+            <input class="btn btn-primary" type="submit" value="Submit">
+        </form>
+        
+    </div>
